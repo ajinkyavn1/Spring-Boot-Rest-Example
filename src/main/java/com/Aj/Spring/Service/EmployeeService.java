@@ -9,5 +9,5 @@ public interface EmployeeService {
     List<Employe> getAllEmployee();
     Employe getEmployeeByid(long id);
     Employe UpdateEmployee(Employe employe,long id);
-    void deleteE
+    void deleteEmployee(long id);
 }
