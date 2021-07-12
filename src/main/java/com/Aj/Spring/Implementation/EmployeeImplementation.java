@@ -39,4 +39,13 @@ public class EmployeeImplementation implements EmployeeService {
 //            throw new ResourceNotFoundException("Employee","ID",id);
         return employeRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("Employee","ID",id));
     }
+
+    @Override
+    public Employe UpdateEmployee(Employe employe, long id) {
+        Employe existingEmploye=employeRepo.findById(id).orElseThrow(
+                ()->new ResourceNotFoundException("EMployee","ID",id));
+        existingEmploye.setEmail(employe.getEmail());
+        employeRepo.save(existingEmploye);
+        return  existingEmploye;
+    }
 }
