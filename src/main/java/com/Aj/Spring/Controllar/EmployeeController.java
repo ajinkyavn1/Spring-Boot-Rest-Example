@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/emplyee")
+@RequestMapping("/api/employee")
 public class EmployeeController {
 
 
     private EmployeeService employeeService;
 
 
-    public EmployeeController(com.Aj.Spring.Service.EmployeeService employeeService) {
+    public EmployeeController(EmployeeService employeeService) {
         super();
        this.employeeService = employeeService;
     }
