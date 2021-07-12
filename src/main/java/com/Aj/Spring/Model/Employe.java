@@ -8,17 +8,15 @@ import javax.persistence.*;
 @Entity
 @Table(name = "employee")
 public class Employe {
-    @Id
+      @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  long id;
-    @Column(name = "frist_name",nullable = false )
-    private String name;
+    private long id;
+    @Column(name = "first_name")
+    private String first_name;
+
     @Column(name = "last_name")
-    private String lastname;
-    @Column(name = "email")
+    private String last_name;
+
+    @Column(name = "email",unique = true)
     private String email;
-    @Column(name = "mobail")
-    private long number;
-
-
 }
