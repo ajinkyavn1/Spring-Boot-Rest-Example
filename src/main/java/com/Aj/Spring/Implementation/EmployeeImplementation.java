@@ -3,13 +3,21 @@ package com.Aj.Spring.Implementation;
 import com.Aj.Spring.Model.Employe;
 import com.Aj.Spring.Repository.EmployeRepo;
 import com.Aj.Spring.Service.EmployeeService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class EmployeeImplementation implements EmployeeService {
 
-    @Autowired
     private EmployeRepo employeRepo;
+
+    public EmployeeImplementation(EmployeRepo employeRepo) {
+        super();
+        this.employeRepo = employeRepo;
+    }
+
     @Override
-    public Employe SaveEmploye(Employe employe) {
+    public Employe saveEmployee(Employe employe) {
+
         return employeRepo.save(employe);
     }
 }
